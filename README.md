@@ -29,3 +29,21 @@ https://www.sqlservercentral.com/articles/azure-data-factory-your-first-data-pip
 * data file -> shared files on self-hosted IR -> ADF -> Azure Blob Storage/ADLS
 * data file -> remote shared folder -> ADF -> Azure Blob Storage/ADLS
 https://docs.microsoft.com/en-us/azure/data-factory/connector-file-system
+## Copy Data From REST API to Azure Blob Storage
+### Use Self-hosted IR to Call REST API
+If the REST API's been deployed in on-premise network environment, you need to follow the steps below:
+* Set up the SHIR in on-premise environment
+* In ADF, create REST API linked service by using the SHIR and the Base URL
+* Create the REST dataset based on the REST API linked service
+* Create Copy Data activity, using the REST dataset as the source, using the JSON dataset based on Azure Data Lake Storage linked service
+### Use Self-hosted IR to Call REST API Managed by Self-hosted APIM Gateway
+* The only difference of this scenario vs the previous one, is that you need to install a [self-hosted APIM gateway](https://docs.microsoft.com/en-us/azure/api-management/self-hosted-gateway-overview) on an on-premise server.
+* Then the Base URL in REST API linked service should be the URL filled in the APIM gateway.
+* Self-hosted APIM gateway is managed by Azure API Management service provisioned on Azure
+
+## Use Azure Function to Call REST API and Save Data to Azure Blob Storage
+* Create App Service
+* Create Functions
+* Set Vnet Integration for the Azure Function
+* In the ADF, create Azure Function Linked Service
+* Create the Azure Function activity
