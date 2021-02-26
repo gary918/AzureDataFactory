@@ -1,7 +1,0 @@
-{
-    "azureFunctions.deploySubpath": "FunctionCallRestAPI/target/azure-functions/FunctionCallRestAPI-1613619403841",
-    "azureFunctions.projectLanguage": "Java",
-    "azureFunctions.projectRuntime": "~3",
-    "debug.internalConsoleOptions": "neverOpen",
-    "azureFunctions.preDeployTask": "package"
-}
