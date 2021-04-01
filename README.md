@@ -69,6 +69,6 @@ If the REST API's been deployed in on-premise network environment, you need to f
   * Connect through Vpn (regional VNet Integration or gateway-required VNet Integration?)
   * Connect through ExpressRoute (regional VNet Integration only)
 * In the ADF, create Azure Function Linked Service
-* Create the Azure Function activity
+* Create the Azure Function activity.
 ## Reference
 * [What are the Different Ways to connect from Azure to On-Premise SQL Server?](https://jeanpaul.cloud/2020/04/12/what-are-the-different-ways-to-connect-from-azure-to-on-premise-sql-server/)
