@@ -1,0 +1,9 @@
+{
+	"name": "honpi-adf2",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "b48752ac-1068-4d1d-857d-90b92431f8bb",
+		"tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+	}
+}
