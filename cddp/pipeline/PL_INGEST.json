@@ -41,6 +41,10 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
+					"items": {
+						"value": "@activity('LookupJobControl').output.value",
+						"type": "Expression"
+					},
 					"activities": [
 						{
 							"name": "Copy data1",
@@ -55,21 +59,75 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"enableStaging": false
-							}
+								"source": {
+									"type": "DelimitedTextSource",
+									"storeSettings": {
+										"type": "AzureBlobFSReadSettings",
+										"recursive": true,
+										"enablePartitionDiscovery": false
+									},
+									"formatSettings": {
+										"type": "DelimitedTextReadSettings"
+									}
+								},
+								"sink": {
+									"type": "DelimitedTextSink",
+									"storeSettings": {
+										"type": "AzureBlobFSWriteSettings"
+									},
+									"formatSettings": {
+										"type": "DelimitedTextWriteSettings",
+										"quoteAllText": true,
+										"fileExtension": ".txt"
+									}
+								},
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"typeConversion": true,
+									"typeConversionSettings": {
+										"allowDataTruncation": true,
+										"treatBooleanAsNumber": false
+									}
+								}
+							},
+							"inputs": [
+								{
+									"referenceName": "DS_ADLS_SRC",
+									"type": "DatasetReference",
+									"parameters": {
+										"SourceContainer": {
+											"value": "@item().SourceContainer",
+											"type": "Expression"
+										},
+										"CustomerID": {
+											"value": "@item().CustomerID",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "DS_ADLS_TGT",
+									"type": "DatasetReference",
+									"parameters": {
+										"TargetContainer": {
+											"value": "@item().TargetContainer",
+											"type": "Expression"
+										},
+										"CustomerID": {
+											"value": "@item().CustomerID",
+											"type": "Expression"
+										}
+									}
+								}
+							]
 						}
 					]
 				}
 			}
 		],
-		"parameters": {
-			"DataSource": {
-				"type": "string"
-			},
-			"DataDestination": {
-				"type": "string"
-			}
-		},
 		"annotations": []
 	}
 }
