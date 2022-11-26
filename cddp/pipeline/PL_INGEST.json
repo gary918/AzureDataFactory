@@ -29,7 +29,7 @@
 				}
 			},
 			{
-				"name": "ForEach1",
+				"name": "ForEachJob",
 				"type": "ForEach",
 				"dependsOn": [
 					{
@@ -47,7 +47,7 @@
 					},
 					"activities": [
 						{
-							"name": "Copy data1",
+							"name": "Copy data",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
@@ -64,6 +64,10 @@
 									"storeSettings": {
 										"type": "AzureBlobFSReadSettings",
 										"recursive": true,
+										"wildcardFolderPath": {
+											"value": "@item().AppID",
+											"type": "Expression"
+										},
 										"enablePartitionDiscovery": false
 									},
 									"formatSettings": {
@@ -96,12 +100,12 @@
 									"referenceName": "DS_ADLS_SRC",
 									"type": "DatasetReference",
 									"parameters": {
-										"SourceContainer": {
-											"value": "@item().SourceContainer",
-											"type": "Expression"
-										},
 										"CustomerID": {
 											"value": "@item().CustomerID",
+											"type": "Expression"
+										},
+										"AppID": {
+											"value": "@item().AppID",
 											"type": "Expression"
 										}
 									}
@@ -112,12 +116,12 @@
 									"referenceName": "DS_ADLS_TGT",
 									"type": "DatasetReference",
 									"parameters": {
-										"TargetContainer": {
-											"value": "@item().TargetContainer",
-											"type": "Expression"
-										},
 										"CustomerID": {
 											"value": "@item().CustomerID",
+											"type": "Expression"
+										},
+										"AppID": {
+											"value": "@item().AppID",
 											"type": "Expression"
 										}
 									}

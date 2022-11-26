@@ -6,11 +6,11 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"SourceContainer": {
-				"type": "String"
-			},
 			"CustomerID": {
 				"type": "String"
+			},
+			"AppID": {
+				"type": "string"
 			}
 		},
 		"annotations": [],
@@ -19,11 +19,11 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"folderPath": {
-					"value": "@dataset().CustomerID",
+					"value": "@dataset().AppID",
 					"type": "Expression"
 				},
 				"fileSystem": {
-					"value": "@dataset().SourceContainer",
+					"value": "@dataset().CustomerID",
 					"type": "Expression"
 				}
 			},
