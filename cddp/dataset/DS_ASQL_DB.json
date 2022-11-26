@@ -1,0 +1,46 @@
+{
+	"name": "DS_ASQL_DB",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ASQL_CFG",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "JobControlID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SourceContainer",
+				"type": "varchar"
+			},
+			{
+				"name": "TargetContainer",
+				"type": "varchar"
+			},
+			{
+				"name": "CustomerID",
+				"type": "varchar"
+			},
+			{
+				"name": "EnabledFlag",
+				"type": "bit"
+			},
+			{
+				"name": "LoadStatus",
+				"type": "varchar"
+			},
+			{
+				"name": "LatestExecutionFlag",
+				"type": "bit"
+			}
+		],
+		"typeProperties": {
+			"schema": "ctl",
+			"table": "JobControl"
+		}
+	}
+}
