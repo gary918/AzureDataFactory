@@ -1,5 +1,13 @@
 {
 	"name": "honpi-adf2",
+	"properties": {
+		"globalParameters": {
+			"LinkedService": {
+				"type": "string",
+				"value": "sdfsdf"
+			}
+		}
+	},
 	"location": "eastus",
 	"identity": {
 		"type": "SystemAssigned",
