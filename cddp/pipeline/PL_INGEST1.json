@@ -1,5 +1,5 @@
 {
-	"name": "PL_INGEST",
+	"name": "PL_INGEST1",
 	"properties": {
 		"activities": [
 			{
@@ -22,7 +22,7 @@
 						"partitionOption": "None"
 					},
 					"dataset": {
-						"referenceName": "DS_ASQL_DB",
+						"referenceName": "DS_ASQL_DB1",
 						"type": "DatasetReference"
 					},
 					"firstRowOnly": false
@@ -98,7 +98,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "DS_ADLS_SRC",
+									"referenceName": "DS_ADLS_SRC1",
 									"type": "DatasetReference",
 									"parameters": {
 										"CustomerID": {
@@ -114,7 +114,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "DS_ADLS_TGT",
+									"referenceName": "DS_ADLS_TGT1",
 									"type": "DatasetReference",
 									"parameters": {
 										"CustomerID": {
