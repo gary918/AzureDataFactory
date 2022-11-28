@@ -1,0 +1,36 @@
+{
+	"name": "DS_ADLS_TGT1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLS_TGT",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"CustomerID": {
+				"type": "String"
+			},
+			"AppID": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@dataset().AppID",
+					"type": "Expression"
+				},
+				"fileSystem": {
+					"value": "@dataset().CustomerID",
+					"type": "Expression"
+				}
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
