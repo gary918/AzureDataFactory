@@ -3,7 +3,7 @@ Data ingestion from customers' (on-premise) data source to cloud is a very commo
 
 This is the sample solution for setting up config driven data pipelines for data ingestion based on Azure Data Factory. 
 ## Architecture
-![architecture](images/architecture.png)
+![architecture](./images/architecture.png)
 
 In the diagram, we are going to ingest data from source1 and source2 into the destination which is Azure Data Lake Storage (ADLS). There are different personas who will use this solution:
 * Software engineer: develop ADF pipeline templates
